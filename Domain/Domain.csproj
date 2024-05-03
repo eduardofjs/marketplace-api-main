@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2283D655-C3DD-4349-B614-ADF326B66FDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.8\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.1\lib\netstandard2.0\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dto\DigitalTwinCompanyDto.cs" />
+    <Compile Include="Dto\DigitalTwinLoginResponseDto.cs" />
+    <Compile Include="Dto\DigitalTwinLoginDto.cs" />
+    <Compile Include="Dto\DigitalTwinProductDto.cs" />
+    <Compile Include="Entities\Banco.cs" />
+    <Compile Include="Entities\Categoria.cs" />
+    <Compile Include="Entities\Cidade.cs" />
+    <Compile Include="Entities\ConfiguracaoGlobal.cs" />
+    <Compile Include="Entities\Documento.cs" />
+    <Compile Include="Entities\EmpresaxDocumento.cs" />
+    <Compile Include="Entities\EmpresaxLogistica.cs" />
+    <Compile Include="Entities\EmpresaxProduto.cs" />
+    <Compile Include="Entities\EmpresaxServicoAdicional.cs" />
+    <Compile Include="Entities\EmpresaxServicoFinanceiro.cs" />
+    <Compile Include="Entities\Endereco.cs" />
+    <Compile Include="Entities\Empresa.cs" />
+    <Compile Include="Entities\Estado.cs" />
+    <Compile Include="Entities\EtapaNegociacaoHistorico.cs" />
+    <Compile Include="Entities\Log.cs" />
+    <Compile Include="Entities\LogErro.cs" />
+    <Compile Include="Entities\Logistica.cs" />
+    <Compile Include="Entities\LogLogin.cs" />
+    <Compile Include="Entities\MeioTransporte.cs" />
+    <Compile Include="Entities\Menu.cs" />
+    <Compile Include="Entities\ModoCultivoModoProducao.cs" />
+    <Compile Include="Entities\ModoCultivoSistemaProdutivo.cs" />
+    <Compile Include="Entities\Moeda.cs" />
+    <Compile Include="Entities\Notificacao.cs" />
+    <Compile Include="Entities\Oferta.cs" />
+    <Compile Include="Entities\OfertaNegociacao.cs" />
+    <Compile Include="Entities\OfertaNegociacaoxDocumento.cs" />
+    <Compile Include="Entities\OfertaNegociacaoxStatusNegociacao.cs" />
+    <Compile Include="Entities\OfertaxCertificacao.cs" />
+    <Compile Include="Entities\OfertaxDocumento.cs" />
+    <Compile Include="Entities\OfertaxQuantidadeProduto.cs" />
+    <Compile Include="Entities\OfertaxServicoAdicional.cs" />
+    <Compile Include="Entities\OfertaxServicoOpcional.cs" />
+    <Compile Include="Entities\Origem.cs" />
+    <Compile Include="Entities\Pagar\card.cs" />
+    <Compile Include="Entities\Pagar\customers.cs" />
+    <Compile Include="Entities\Pagar\order.cs" />
+    <Compile Include="Entities\Pagar\payment.cs" />
+    <Compile Include="Entities\Perfil.cs" />
+    <Compile Include="Entities\PerfilxSubMenu.cs" />
+    <Compile Include="Entities\PerfilxUsuario.cs" />
+    <Compile Include="Entities\Pessoa.cs" />
+    <Compile Include="Entities\PoliticaPrivacidade.cs" />
+    <Compile Include="Entities\PoliticaPrivacidadexUsuario.cs" />
+    <Compile Include="Entities\Produto.cs" />
+    <Compile Include="Entities\PronomeTratamento.cs" />
+    <Compile Include="Entities\ServicoAdicional.cs" />
+    <Compile Include="Entities\ServicoFinanceiro.cs" />
+    <Compile Include="Entities\ServicoOpcional.cs" />
+    <Compile Include="Entities\Sexo.cs" />
+    <Compile Include="Entities\StatusDocumento.cs" />
+    <Compile Include="Entities\StatusNegociacao.cs" />
+    <Compile Include="Entities\StatusPagamento.cs" />
+    <Compile Include="Entities\StatusProduto.cs" />
+    <Compile Include="Entities\SubMenu.cs" />
+    <Compile Include="Entities\TemplateEmail.cs" />
+    <Compile Include="Entities\TermoUso.cs" />
+    <Compile Include="Entities\TermoUsoxUsuario.cs" />
+    <Compile Include="Entities\TipoCertificacao.cs" />
+    <Compile Include="Entities\TipoDocumento.cs" />
+    <Compile Include="Entities\TipoEmpresa.cs" />
+    <Compile Include="Entities\TipoLogisticoPorto.cs" />
+    <Compile Include="Entities\TipoLogisticoSistemaProdutivo.cs" />
+    <Compile Include="Entities\TipoNotificacao.cs" />
+    <Compile Include="Entities\TipoProduto.cs" />
+    <Compile Include="Entities\TipoServicoAdicional.cs" />
+    <Compile Include="Entities\TipoTransacaoLog.cs" />
+    <Compile Include="Entities\Unidade.cs" />
+    <Compile Include="Entities\UnidadePeso.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Interfaces\Repository\IBancoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ICategoriaRepository.cs" />
+    <Compile Include="Interfaces\Repository\ICidadeRepository.cs" />
+    <Compile Include="Interfaces\Repository\IConfiguracaoGlobalRepository.cs" />
+    <Compile Include="Interfaces\Repository\IDocumentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IEmpresaxDocumentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IEmpresaxLogisticaRepository.cs" />
+    <Compile Include="Interfaces\Repository\IEmpresaxProdutoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IEmpresaxServicoAdicionalRepository.cs" />
+    <Compile Include="Interfaces\Repository\IEmpresaxServicoFinanceiroRepository.cs" />
+    <Compile Include="Interfaces\Repository\IEnderecoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IEmpresaRepository.cs" />
+    <Compile Include="Interfaces\Repository\IEstadoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ILogErroRepository.cs" />
+    <Compile Include="Interfaces\Repository\ILogisticaRepository.cs" />
+    <Compile Include="Interfaces\Repository\ILogLoginRepository.cs" />
+    <Compile Include="Interfaces\Repository\ILogRepository.cs" />
+    <Compile Include="Interfaces\Repository\IMeioTransporteRepository.cs" />
+    <Compile Include="Interfaces\Repository\IMenuRepository.cs" />
+    <Compile Include="Interfaces\Repository\IModoCultivoModoProducaoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IModoCultivoSistemaProdutivoRepository.cs" />
+    <Compile Include="Interfaces\Repository\INotificacaoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOfertaNegociacaoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOfertaNegociacaoxDocumentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOfertaNegociacaoxStatusNegociacaoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOfertaRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOfertaxCertificacaoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOfertaxDocumentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOfertaxQuantidadeProdutoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOfertaxServicoAdicionalRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOfertaxServicoOpcionalRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPerfilRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPerfilxSubMenuRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPerfilxUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPessoaRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPoliticaPrivacidadeRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPoliticaPrivacidadexUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Repository\IProdutoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IPronomeTratamentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IServicoAdicionalRepository.cs" />
+    <Compile Include="Interfaces\Repository\IServicoFinanceiroRepository.cs" />
+    <Compile Include="Interfaces\Repository\IServicoOpcionalRepository.cs" />
+    <Compile Include="Interfaces\Repository\ISexoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IStatusDocumentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IStatusNegociacaoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IStatusPagamentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IStatusProdutoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ISubMenuRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITemplateEmailRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITermoUsoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITermoUsoxUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITipoCertificacaoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITipoDocumentoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITipoEmpresaRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITipoLogisticoPortoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITipoLogisticoSistemaProdutivoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITipoNotificacaoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITipoProdutoRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITipoServicoAdicionalRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITipoTransacaoLogRepository.cs" />
+    <Compile Include="Interfaces\Repository\IUnidadePesoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IUnidadeRepository.cs" />
+    <Compile Include="Interfaces\Repository\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Services\IBancoServices.cs" />
+    <Compile Include="Interfaces\Services\ICategoriaServices.cs" />
+    <Compile Include="Interfaces\Services\ICidadeServices.cs" />
+    <Compile Include="Interfaces\Services\IConfiguracaoGlobalServices.cs" />
+    <Compile Include="Interfaces\Services\IDocumentoServices.cs" />
+    <Compile Include="Interfaces\Services\IEmpresaxDocumentoServices.cs" />
+    <Compile Include="Interfaces\Services\IEmpresaxLogisticaServices.cs" />
+    <Compile Include="Interfaces\Services\IEmpresaxProdutoServices.cs" />
+    <Compile Include="Interfaces\Services\IEmpresaxServicoAdicionalServices.cs" />
+    <Compile Include="Interfaces\Services\IEmpresaxServicoFinanceiroServices.cs" />
+    <Compile Include="Interfaces\Services\IEnderecoServices.cs" />
+    <Compile Include="Interfaces\Services\IEmpresaServices.cs" />
+    <Compile Include="Interfaces\Services\IEstadoServices.cs" />
+    <Compile Include="Interfaces\Services\ILogErroServices.cs" />
+    <Compile Include="Interfaces\Services\ILogisticaServices.cs" />
+    <Compile Include="Interfaces\Services\ILogLoginServices.cs" />
+    <Compile Include="Interfaces\Services\ILogServices.cs" />
+    <Compile Include="Interfaces\Services\IMeioTransporteServices.cs" />
+    <Compile Include="Interfaces\Services\IMenuServices.cs" />
+    <Compile Include="Interfaces\Services\IModoCultivoModoProducaoServices.cs" />
+    <Compile Include="Interfaces\Services\IModoCultivoSistemaProdutivoServices.cs" />
+    <Compile Include="Interfaces\Services\INotificacaoServices.cs" />
+    <Compile Include="Interfaces\Services\IOfertaNegociacaoServices.cs" />
+    <Compile Include="Interfaces\Services\IOfertaNegociacaoxDocumentoServices.cs" />
+    <Compile Include="Interfaces\Services\IOfertaNegociacaoxStatusNegociacaoServices.cs" />
+    <Compile Include="Interfaces\Services\IOfertaServices.cs" />
+    <Compile Include="Interfaces\Services\IOfertaxCertificacaoServices.cs" />
+    <Compile Include="Interfaces\Services\IOfertaxDocumentoServices.cs" />
+    <Compile Include="Interfaces\Services\IOfertaxQuantidadeProdutoServices.cs" />
+    <Compile Include="Interfaces\Services\IOfertaxServicoAdicionalServices.cs" />
+    <Compile Include="Interfaces\Services\IOfertaxServicoOpcionalServices.cs" />
+    <Compile Include="Interfaces\Services\IPerfilServices.cs" />
+    <Compile Include="Interfaces\Services\IPerfilxSubMenuServices.cs" />
+    <Compile Include="Interfaces\Services\IPerfilxUsuarioServices.cs" />
+    <Compile Include="Interfaces\Services\IPessoaServices.cs" />
+    <Compile Include="Interfaces\Services\IPoliticaPrivacidadeServices.cs" />
+    <Compile Include="Interfaces\Services\IPoliticaPrivacidadexUsuarioServices.cs" />
+    <Compile Include="Interfaces\Services\IProdutoServices.cs" />
+    <Compile Include="Interfaces\Services\IPronomeTratamentoServices.cs" />
+    <Compile Include="Interfaces\Services\IServicoAdicionalServices.cs" />
+    <Compile Include="Interfaces\Services\IServicoFinanceiroServices.cs" />
+    <Compile Include="Interfaces\Services\IServicoOpcionalServices.cs" />
+    <Compile Include="Interfaces\Services\ISexoServices.cs" />
+    <Compile Include="Interfaces\Services\IStatusDocumentoServices.cs" />
+    <Compile Include="Interfaces\Services\IStatusNegociacaoServices.cs" />
+    <Compile Include="Interfaces\Services\IStatusPagamentoServices.cs" />
+    <Compile Include="Interfaces\Services\IStatusProdutoServices.cs" />
+    <Compile Include="Interfaces\Services\ISubMenuServices.cs" />
+    <Compile Include="Interfaces\Services\ITemplateEmailServices.cs" />
+    <Compile Include="Interfaces\Services\ITermoUsoServices.cs" />
+    <Compile Include="Interfaces\Services\ITermoUsoxUsuarioServices.cs" />
+    <Compile Include="Interfaces\Services\ITipoCertificacaoServices.cs" />
+    <Compile Include="Interfaces\Services\ITipoDocumentoServices.cs" />
+    <Compile Include="Interfaces\Services\ITipoEmpresaServices.cs" />
+    <Compile Include="Interfaces\Services\ITipoLogisticoPortoServices.cs" />
+    <Compile Include="Interfaces\Services\ITipoLogisticoSistemaProdutivoServices.cs" />
+    <Compile Include="Interfaces\Services\ITipoNotificacaoServices.cs" />
+    <Compile Include="Interfaces\Services\ITipoProdutoServices.cs" />
+    <Compile Include="Interfaces\Services\ITipoServicoAdicionalServices.cs" />
+    <Compile Include="Interfaces\Services\ITipoTransacaoLogServices.cs" />
+    <Compile Include="Interfaces\Services\IUnidadePesoServices.cs" />
+    <Compile Include="Interfaces\Services\IUnidadeServices.cs" />
+    <Compile Include="Interfaces\Services\IUsuarioServices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BancoServices.cs" />
+    <Compile Include="Services\CategoriaServices.cs" />
+    <Compile Include="Services\CidadeServices.cs" />
+    <Compile Include="Services\ConfiguracaoGlobalServices.cs" />
+    <Compile Include="Services\DocumentoServices.cs" />
+    <Compile Include="Services\EmpresaxDocumentoServices.cs" />
+    <Compile Include="Services\EmpresaxLogisticaServices.cs" />
+    <Compile Include="Services\EmpresaxProdutoServices.cs" />
+    <Compile Include="Services\EmpresaxServicoAdicionalServices.cs" />
+    <Compile Include="Services\EmpresaxServicoFinanceiroServices.cs" />
+    <Compile Include="Services\EnderecoServices.cs" />
+    <Compile Include="Services\EmpresaServices.cs" />
+    <Compile Include="Services\EstadoServices.cs" />
+    <Compile Include="Services\LogErroServices.cs" />
+    <Compile Include="Services\LogisticaServices.cs" />
+    <Compile Include="Services\LogLoginServices.cs" />
+    <Compile Include="Services\LogServices.cs" />
+    <Compile Include="Services\MeioTransporteServices.cs" />
+    <Compile Include="Services\MenuServices.cs" />
+    <Compile Include="Services\ModoCultivoModoProducaoServices.cs" />
+    <Compile Include="Services\ModoCultivoSistemaProdutivoServices.cs" />
+    <Compile Include="Services\NotificacaoServices.cs" />
+    <Compile Include="Services\OfertaNegociacaoServices.cs" />
+    <Compile Include="Services\OfertaNegociacaoxDocumentoServices.cs" />
+    <Compile Include="Services\OfertaNegociacaoxStatusNegociacaoServices.cs" />
+    <Compile Include="Services\OfertaServices.cs" />
+    <Compile Include="Services\OfertaxCertificacaoServices.cs" />
+    <Compile Include="Services\OfertaxDocumentoServices.cs" />
+    <Compile Include="Services\OfertaxQuantidadeProdutoServices.cs" />
+    <Compile Include="Services\OfertaxServicoAdicionalServices.cs" />
+    <Compile Include="Services\OfertaxServicoOpcionalServices.cs" />
+    <Compile Include="Services\PerfilServices.cs" />
+    <Compile Include="Services\PerfilxSubMenuServices.cs" />
+    <Compile Include="Services\PerfilxUsuarioServices.cs" />
+    <Compile Include="Services\PessoaServices.cs" />
+    <Compile Include="Services\PoliticaPrivacidadeServices.cs" />
+    <Compile Include="Services\PoliticaPrivacidadexUsuarioServices.cs" />
+    <Compile Include="Services\ProdutoServices.cs" />
+    <Compile Include="Services\PronomeTratamentoServices.cs" />
+    <Compile Include="Services\ServicoAdicionalServices.cs" />
+    <Compile Include="Services\ServicoFinanceiroServices.cs" />
+    <Compile Include="Services\ServicoOpcionalServices.cs" />
+    <Compile Include="Services\SexoServices.cs" />
+    <Compile Include="Services\StatusDocumentoServices.cs" />
+    <Compile Include="Services\StatusNegociacaoServices.cs" />
+    <Compile Include="Services\StatusPagamentoServices.cs" />
+    <Compile Include="Services\StatusProdutoServices.cs" />
+    <Compile Include="Services\SubMenuServices.cs" />
+    <Compile Include="Services\TemplateEmailServices.cs" />
+    <Compile Include="Services\TermoUsoServices.cs" />
+    <Compile Include="Services\TermoUsoxUsuarioServices.cs" />
+    <Compile Include="Services\TipoCertificacaoServices.cs" />
+    <Compile Include="Services\TipoDocumentoServices.cs" />
+    <Compile Include="Services\TipoEmpresaServices.cs" />
+    <Compile Include="Services\TipoLogisticoPortoServices.cs" />
+    <Compile Include="Services\TipoLogisticoSistemaProdutivoServices.cs" />
+    <Compile Include="Services\TipoNotificacaoServices.cs" />
+    <Compile Include="Services\TipoProdutoServices.cs" />
+    <Compile Include="Services\TipoServicoAdicionalServices.cs" />
+    <Compile Include="Services\TipoTransacaoLogServices.cs" />
+    <Compile Include="Services\UnidadePesoServices.cs" />
+    <Compile Include="Services\UnidadeServices.cs" />
+    <Compile Include="Services\UsuarioServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
